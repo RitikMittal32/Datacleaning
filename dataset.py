@@ -4,7 +4,7 @@ import seaborn as sns
 import os
 
 dfd = pd.read_csv("50_Startups.csv")
-# print(dfd)
+print(dfd)
 
 #Handling the problem
 
@@ -13,33 +13,33 @@ dfd = pd.read_csv("50_Startups.csv")
 missing_value = ['0']
 df = pd.read_csv("50_Startups.csv", na_values = missing_value)
 p = df.isnull().sum()
-# print(p)
+print(p)
 
 c = df.isnull().any()
-# print(c)
+print(c)
 
 m = sns.heatmap(df.isnull() , yticklabels=False, annot=True) # To visualize the datasheet which you have
-# print(m)
+print(m)
 
 #step2 -> lets learn how to remove this values
 
 a = df.dropna(how= 'all')
-# print(a)
+print(a)
 
 f = df.fillna(method='ffill')
-# print(f)
+print(f)
 
 b = df.fillna(method='bfill')
-# print(b)
+print(b)
 
 i = df.interpolate()
-# print(i)
+print(i)
 
 cf = df.fillna({
     'R&D Spend' : 2,
     'Marketing Spend':  1
 })
-# print(cf)
+print(cf)
 
 df11 = pd.DataFrame(data={
     "New York":[],
@@ -47,4 +47,4 @@ df11 = pd.DataFrame(data={
     "Florida": []
 })
 
-# print(df11)
+print(df11)
